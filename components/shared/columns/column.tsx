@@ -1,11 +1,19 @@
 import { clsx } from 'clsx'
-import { SPACING_MULTIPLIER } from 'components/contents'
+import {
+  SPACING_MULTIPLIER,
+  tailwind2xlPercentageWidthMap,
+  tailwindLgPercentageWidthMap,
+  tailwindMdPercentageWidthMap,
+  tailwindPercentageWidthMap,
+  tailwindSmPercentageWidthMap,
+  tailwindXlPercentageWidthMap,
+} from 'components/contents'
 import { FC, PropsWithChildren } from 'react'
 
 import { ContentBlock } from '../content-block'
 
 export type ColumnProps = {
-  width: {
+  widthsAtBreakpoints: {
     standardWidth: string
     smallWidth: string
     mediumWidth: string
@@ -15,14 +23,12 @@ export type ColumnProps = {
   }
   content: any
   contentAlignment?: 'left' | 'center' | 'right'
-  spaceX?: number
 }
 
 export const Column: FC<PropsWithChildren<ColumnProps>> = ({
-  width,
+  widthsAtBreakpoints,
   content,
   contentAlignment,
-  spaceX,
 }) => {
   // const widthPercentage = (eval(width) ?? 1) * 100
 
@@ -33,21 +39,40 @@ export const Column: FC<PropsWithChildren<ColumnProps>> = ({
     largeWidth,
     xlWidth,
     xxlWidth,
-  } = width
+  } = widthsAtBreakpoints
 
   // const calculatedWidth = `calc(${widthPercentage}% - ${
   //   (spaceX ?? 0) * SPACING_MULTIPLIER
   // }px)`
 
-  const widthClasses = `${standardWidth ? `w-${standardWidth}` : ''} ${
-    `sm:w-${smallWidth}` ?? ''
-  } ${`md:w-${mediumWidth}` ?? ''} ${`lg:w-${largeWidth}` ?? ''} ${
-    `xl:w-${xlWidth}` ?? ''
-  } ${`2xl:w-${xxlWidth}` ?? ''}`
+  const standardWidthClass = standardWidth
+    ? tailwindPercentageWidthMap.get(standardWidth)
+    : ''
+  const smallWidthClass = smallWidth
+    ? tailwindSmPercentageWidthMap.get(smallWidth)
+    : ''
+  const mediumWidthClass = mediumWidth
+    ? tailwindMdPercentageWidthMap.get(mediumWidth)
+    : ''
+  const largeWidthClass = largeWidth
+    ? tailwindLgPercentageWidthMap.get(largeWidth)
+    : ''
+  const xlWidthClass = xlWidth ? tailwindXlPercentageWidthMap.get(xlWidth) : ''
+  const xxlWidthClass = xxlWidth
+    ? tailwind2xlPercentageWidthMap.get(xxlWidth)
+    : ''
 
   return (
     <div
-      className={clsx(`column flex flex-col`, widthClasses)}
+      className={clsx(
+        `column flex flex-col`,
+        standardWidthClass,
+        smallWidthClass,
+        mediumWidthClass,
+        largeWidthClass,
+        xlWidthClass,
+        xxlWidthClass
+      )}
       style={{
         alignItems:
           contentAlignment === 'left'

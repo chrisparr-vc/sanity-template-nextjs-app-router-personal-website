@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
   { title: 'Hidden', value: 'hidden' },
-  { title: '1', value: '1' },
+  { title: 'Full', value: 'full' },
   { title: '1/2', value: '1/2' },
   { title: '1/3', value: '1/3' },
   { title: '2/3', value: '2/3' },
