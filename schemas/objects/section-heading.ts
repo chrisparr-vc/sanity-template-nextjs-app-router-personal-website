@@ -1,6 +1,7 @@
-import { defineType } from 'sanity';
-import headings from '../headings';
-import { marginYFields, paddingFields } from '../spacing-fields';
+import { defineType } from 'sanity'
+import { marginYFields, paddingFields } from 'schemas/styles/spacing-fields'
+
+import headings from './headings'
 
 export default defineType({
   title: 'Section Heading',
@@ -12,8 +13,10 @@ export default defineType({
     },
     prepare(selection) {
       return {
-        title: selection.title ? `${selection.title} - Section Heading` : 'Section Heading',
-      };
+        title: selection.title
+          ? `${selection.title} - Section Heading`
+          : 'Section Heading',
+      }
     },
   },
   fields: [
@@ -40,4 +43,4 @@ export default defineType({
       fields: [...marginYFields, ...paddingFields],
     },
   ],
-});
+})

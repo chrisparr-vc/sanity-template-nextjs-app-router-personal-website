@@ -1,5 +1,5 @@
-import { Header } from 'components/shared/header-2'
-import ScrollUp from 'components/shared/ScrollUp'
+import { Header } from 'components/shared/header'
+import ScrollUp from 'components/shared/scroll-up'
 import type { HomePagePayload } from 'types'
 
 export interface HomePageProps {
@@ -13,7 +13,7 @@ export const HomePage = ({ data }: HomePageProps) => {
   return (
     <div className="space-y-20">
       {/* Header */}
-      {title && <Header centered title={title} description={overview} />}
+      {title && <Header title={title} description={overview} />}
 
       {/* Workaround: scroll to top on route change */}
       <ScrollUp />

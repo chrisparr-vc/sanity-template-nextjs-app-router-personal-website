@@ -1,6 +1,6 @@
 import { toPlainText } from '@portabletext/react'
-import { Page } from 'components/pages/page/page-2'
-import PagePreview from 'components/pages/page/PagePreview'
+import { Page } from 'components/pages/page/page'
+import { PagePreview } from 'components/pages/page/page-preview'
 import { readToken } from 'lib/sanity.api'
 import { getClient } from 'lib/sanity.client'
 import {
@@ -44,7 +44,7 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }))
 }
 
-export default async function PageSlugRoute({ params }: Props) {
+export const PageSlugRoute = async ({ params }: Props) => {
   const { slug } = params
   const preview = draftMode().isEnabled ? { token: readToken! } : undefined
   const client = getClient(preview)
@@ -58,3 +58,5 @@ export default async function PageSlugRoute({ params }: Props) {
 
   return preview ? <PagePreview data={data} /> : <Page data={data} />
 }
+
+export default PageSlugRoute

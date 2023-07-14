@@ -11,8 +11,20 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import page from 'schemas/documents/page'
-import milestone from 'schemas/objects/milestone'
-import timeline from 'schemas/objects/timeline'
+import accordion from 'schemas/objects/accordion/accordion'
+import accordionItem from 'schemas/objects/accordion/accordion-item'
+import alert from 'schemas/objects/alert'
+import buttonLink from 'schemas/objects/button-link'
+import column from 'schemas/objects/columns/column'
+import columns from 'schemas/objects/columns/columns'
+import contentBlock from 'schemas/objects/content-block'
+import customImage from 'schemas/objects/custom-image'
+import link from 'schemas/objects/links/link'
+import links from 'schemas/objects/links/links'
+import quote from 'schemas/objects/quote'
+import section from 'schemas/objects/section'
+import sectionHeading from 'schemas/objects/section-heading'
+import tableOfContents from 'schemas/objects/table-of-contents'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
 
@@ -36,8 +48,20 @@ export default defineConfig({
       // Documents
       page,
       // Objects
-      milestone,
-      timeline,
+      accordion,
+      accordionItem,
+      alert,
+      buttonLink,
+      column,
+      columns,
+      contentBlock,
+      customImage,
+      link,
+      links,
+      quote,
+      section,
+      sectionHeading,
+      tableOfContents,
     ],
   },
   plugins: [

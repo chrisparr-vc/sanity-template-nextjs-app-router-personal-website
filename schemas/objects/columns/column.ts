@@ -1,5 +1,5 @@
-import { defineArrayMember, defineType } from 'sanity';
-import { contentAlignmentField } from '../../alignment';
+import { defineType } from 'sanity'
+import { contentAlignmentField } from 'schemas/styles/alignment'
 
 export default defineType({
   title: 'Column',
@@ -33,4 +33,4 @@ export default defineType({
     },
     { ...contentAlignmentField, initialValue: 'left' },
   ],
-});
+})

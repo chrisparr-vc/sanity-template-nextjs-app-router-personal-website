@@ -1,7 +1,7 @@
-import { defineArrayMember, defineType } from 'sanity';
-import { paddingXFields, spaceXField } from '../../spacing-fields';
-import { contentAlignmentField } from '../../alignment';
-import { maxWidthField } from '../../max-width';
+import { defineArrayMember, defineType } from 'sanity'
+import { contentAlignmentField } from 'schemas/styles/alignment'
+import { maxWidthField } from 'schemas/styles/max-width'
+import { paddingXFields, spaceXField } from 'schemas/styles/spacing-fields'
 
 export default defineType({
   title: 'Columns',
@@ -14,7 +14,7 @@ export default defineType({
     prepare(selection) {
       return {
         title: selection.title ? `${selection.title} - Columns` : 'Columns',
-      };
+      }
     },
   },
   fields: [
@@ -48,4 +48,4 @@ export default defineType({
       fields: [...paddingXFields, spaceXField],
     },
   ],
-});
+})

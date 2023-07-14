@@ -1,5 +1,5 @@
-import { defineType } from 'sanity';
-import { marginYFields } from '../spacing-fields';
+import { defineType } from 'sanity'
+import { marginYFields } from 'schemas/styles/spacing-fields'
 
 export default defineType({
   title: 'Quote',
@@ -12,7 +12,7 @@ export default defineType({
     prepare(selection) {
       return {
         title: selection.title ? `${selection.title} - Quote` : 'Quote',
-      };
+      }
     },
   },
   fields: [
@@ -37,4 +37,4 @@ export default defineType({
       fields: marginYFields,
     },
   ],
-});
+})

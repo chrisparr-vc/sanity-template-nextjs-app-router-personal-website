@@ -8,8 +8,10 @@ import { useEffect } from 'react'
  * https://github.com/vercel/next.js/issues/42492
  */
 
-export default function ScrollUp() {
+export const ScrollUp = () => {
   useEffect(() => window.document.scrollingElement?.scrollTo(0, 0), [])
 
   return null
 }
+
+export default ScrollUp

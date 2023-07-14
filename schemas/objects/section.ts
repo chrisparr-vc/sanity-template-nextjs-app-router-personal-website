@@ -1,8 +1,7 @@
-import { defineType } from 'sanity';
-import headings from '../headings';
-import { marginYFields, paddingFields } from '../spacing-fields';
-import { contentAlignmentField } from '../alignment';
-import { maxWidthField } from '../max-width';
+import { defineType } from 'sanity'
+import { contentAlignmentField } from 'schemas/styles/alignment'
+import { maxWidthField } from 'schemas/styles/max-width'
+import { marginYFields, paddingFields } from 'schemas/styles/spacing-fields'
 
 export default defineType({
   title: 'Section',
@@ -15,7 +14,7 @@ export default defineType({
     prepare(selection) {
       return {
         title: selection.title ? `${selection.title} - Section` : 'Section',
-      };
+      }
     },
   },
   fields: [
@@ -41,4 +40,4 @@ export default defineType({
       type: 'blockContent',
     },
   ],
-});
+})

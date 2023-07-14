@@ -2,9 +2,12 @@
 
 import { pagesBySlugQuery } from 'lib/sanity.queries'
 import { useLiveQuery } from 'next-sanity/preview'
+import { FC } from 'react'
 import type { PagePayload } from 'types'
 
-export default function PagePreview({ data: initialData }: PageProps) {
+import { Page, PageProps } from './page'
+
+export const PagePreview: FC<PageProps> = ({ data: initialData }) => {
   const [data] = useLiveQuery<PagePayload | null>(
     initialData,
     pagesBySlugQuery,
