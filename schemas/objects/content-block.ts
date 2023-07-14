@@ -62,17 +62,11 @@ export default defineType({
     defineArrayMember({
       type: 'columns',
     }),
-    defineArrayMember({
-      type: 'callout',
-    }),
     // defineArrayMember({
     //   type: 'carousel',
     // }),
     defineArrayMember({
-      type: 'contents',
-    }),
-    defineArrayMember({
-      type: 'cta',
+      type: 'tableOfContents',
     }),
     // defineArrayMember({
     //   type: 'dataTable',
@@ -84,7 +78,7 @@ export default defineType({
     //   type: 'highlight',
     // }),
     defineArrayMember({
-      type: 'info',
+      type: 'alert',
     }),
     defineArrayMember({
       type: 'links',
@@ -92,9 +86,7 @@ export default defineType({
     defineArrayMember({
       type: 'quote',
     }),
-    defineArrayMember({
-      type: 'helpfulLinks',
-    }),
+
     defineArrayMember({
       type: 'section',
     }),

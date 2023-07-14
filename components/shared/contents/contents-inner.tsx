@@ -1,48 +1,46 @@
-'use client';
+'use client'
 
-import { FC, PropsWithChildren, useEffect, useState } from 'react';
-import clsx from 'clsx';
-import { stringToKebabCase } from '@core/helpers/string-format-helpers';
+import { FC, PropsWithChildren, useEffect, useState } from 'react'
+import { stringToKebabCase } from 'utils/string-format-helpers'
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@core/components/layout/accordion/accordion';
-import { ChevronIcon } from '@core/components/icons/chevron';
+} from '../../core/accordion'
 
 export type ContentsInnerProps = {
-  title?: string;
-};
+  title?: string
+}
 
-export const ContentsInner: FC<PropsWithChildren<ContentsInnerProps>> = ({ title }) => {
-  const [headings, setHeadings] = useState<{ value?: string | null; id: string | null }[]>([]);
+export const ContentsInner: FC<PropsWithChildren<ContentsInnerProps>> = ({
+  title,
+}) => {
+  const [headings, setHeadings] = useState<
+    { value?: string | null; id: string | null }[]
+  >([])
 
   useEffect(() => {
-    const sectionHeadings = document.getElementsByClassName('section-heading');
+    const sectionHeadings = document.getElementsByClassName('section-heading')
     const data = Array.from(sectionHeadings).map((element) => ({
       id: element.id,
       value: element.querySelector('.heading')?.textContent,
-    }));
-    setHeadings(data);
-  }, []);
+    }))
+    setHeadings(data)
+  }, [])
 
-  const accordionVal = stringToKebabCase(title ?? 'accordion');
+  const accordionVal = stringToKebabCase(title ?? 'accordion')
 
   return (
     <Accordion type="single" collapsible defaultValue={accordionVal}>
       <AccordionItem value={accordionVal} className="group">
         <AccordionTrigger>
           <div className="flex justify-between w-full py-2 pr-[2px]">
-            <span className="font-black uppercase text-primary-1-danube text-body-xs">{title}</span>
-            <div className="flex items-center justify-center">
-              <ChevronIcon
-                className={clsx(
-                  'stroke-primary-1-danube  group-data-state-closed:rotate-90 group-data-state-open:-rotate-90 transition-all',
-                )}
-                width={10}
-              />
-            </div>
+            <span className="font-black uppercase text-primary-1-danube text-body-xs">
+              {title}
+            </span>
+            <div className="flex items-center justify-center"></div>
           </div>
         </AccordionTrigger>
         <AccordionContent>
@@ -60,5 +58,5 @@ export const ContentsInner: FC<PropsWithChildren<ContentsInnerProps>> = ({ title
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-  );
-};
+  )
+}

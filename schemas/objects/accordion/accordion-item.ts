@@ -13,7 +13,7 @@ export default defineType({
     {
       title: 'Content',
       name: 'content',
-      type: 'blockContent',
+      type: 'contentBlock',
     },
   ],
 })

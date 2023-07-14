@@ -27,8 +27,7 @@ export type ImageBlockProps = {
 export const ImageBlock: FC<
   PortableTextTypeComponentProps<ImageBlockProps>
 > = ({ value, isInline }) => {
-  const preview = draftMode().isEnabled ? { token: readToken! } : undefined
-  const sanityClient = getClient(preview)
+  const sanityClient = getClient()
 
   const { alt, caption, imageUpload, spacing, border } = value
 

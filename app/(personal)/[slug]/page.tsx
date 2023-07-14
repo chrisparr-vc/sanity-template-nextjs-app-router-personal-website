@@ -56,7 +56,11 @@ export const PageSlugRoute = async ({ params }: Props) => {
     notFound()
   }
 
-  return preview ? <PagePreview data={data} /> : <Page data={data} />
+  return !data ? null : preview ? (
+    <PagePreview data={data} />
+  ) : (
+    <Page data={data} />
+  )
 }
 
 export default PageSlugRoute

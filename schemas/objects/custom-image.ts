@@ -28,7 +28,7 @@ export default defineType({
     {
       title: 'Caption',
       name: 'caption',
-      type: 'blockContent',
+      type: 'contentBlock',
     },
     {
       title: 'Alt',

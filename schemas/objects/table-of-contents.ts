@@ -1,9 +1,10 @@
 import { defineType } from 'sanity'
+
 import { marginYFields } from '../styles/spacing-fields'
 
 export default defineType({
   title: 'Table of Contents',
-  name: 'table-of-contents',
+  name: 'tableOfContents',
   type: 'object',
   preview: {
     select: {

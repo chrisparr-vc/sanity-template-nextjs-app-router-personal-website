@@ -1,19 +1,22 @@
-import { PortableTextTypeComponentProps } from '@portabletext/react';
-import { FC } from 'react';
-import { AccordionBlockItem } from './accordion-block-item';
-import { clsx } from 'clsx';
-import { SPACING_MULTIPLIER } from '../../../../constants';
-import { Accordion } from '@core/components/layout/accordion/accordion';
+import { PortableTextTypeComponentProps } from '@portabletext/react'
+import { clsx } from 'clsx'
+import { SPACING_MULTIPLIER } from 'components/contents'
+import { Accordion } from 'components/core/accordion'
+import { FC } from 'react'
+
+import { AccordionBlockItem } from './accordion-block-item'
 
 export type AccordionBlockProps = {
-  type: 'multiple' | 'single';
-  accordionItems: any[];
-  marginTop: number;
-  marginBottom: number;
-};
+  type: 'multiple' | 'single'
+  accordionItems: any[]
+  marginTop: number
+  marginBottom: number
+}
 
-export const AccordionBlock: FC<PortableTextTypeComponentProps<AccordionBlockProps>> = ({ value }) => {
-  const { type, accordionItems, marginBottom, marginTop } = value;
+export const AccordionBlock: FC<
+  PortableTextTypeComponentProps<AccordionBlockProps>
+> = ({ value }) => {
+  const { type, accordionItems, marginBottom, marginTop } = value
   return (
     <Accordion
       className={clsx('accordion-block w-full')}
@@ -28,5 +31,5 @@ export const AccordionBlock: FC<PortableTextTypeComponentProps<AccordionBlockPro
         <AccordionBlockItem key={index} {...item} />
       ))}
     </Accordion>
-  );
-};
+  )
+}
