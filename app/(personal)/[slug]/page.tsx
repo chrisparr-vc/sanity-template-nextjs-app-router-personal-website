@@ -1,5 +1,5 @@
 import { toPlainText } from '@portabletext/react'
-import { Page } from 'components/pages/page/Page'
+import { Page } from 'components/pages/page/page-2'
 import PagePreview from 'components/pages/page/PagePreview'
 import { readToken } from 'lib/sanity.api'
 import { getClient } from 'lib/sanity.client'

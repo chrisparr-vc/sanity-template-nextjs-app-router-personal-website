@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@portabletext/react": "3.0.4",
+    "@portabletext/types": "^2.0.5",
     "@sanity/client": "6.1.7",
     "@sanity/demo": "1.0.2",
     "@sanity/image-url": "1.0.2",
@@ -22,6 +23,7 @@
     "@tailwindcss/typography": "0.5.9",
     "@vercel/og": "0.5.8",
     "classnames": "2.3.2",
+    "clsx": "^1.2.1",
     "date-fns": "2.30.0",
     "intl-segmenter-polyfill": "0.4.4",
     "next": "13.4.9",

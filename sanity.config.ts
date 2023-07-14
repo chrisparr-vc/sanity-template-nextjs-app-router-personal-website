@@ -11,8 +11,6 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import page from 'schemas/documents/page'
-import project from 'schemas/documents/project'
-import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
@@ -22,11 +20,7 @@ const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
   'Next.js Personal Website with Sanity.io'
 
-export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
-  home.name,
-  page.name,
-  project.name,
-]
+export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [home.name, page.name]
 
 export default defineConfig({
   basePath: '/studio',
@@ -40,9 +34,7 @@ export default defineConfig({
       home,
       settings,
       // Documents
-      duration,
       page,
-      project,
       // Objects
       milestone,
       timeline,

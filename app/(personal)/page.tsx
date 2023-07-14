@@ -1,6 +1,6 @@
 import { toPlainText } from '@portabletext/react'
 import { HomePage } from 'components/pages/home/HomePage'
-import HomePagePreview from 'components/pages/home/HomePagePreview'
+import { HomePagePreview } from 'components/pages/home/HomePagePreview'
 import { readToken } from 'lib/sanity.api'
 import { getClient } from 'lib/sanity.client'
 import { homePageQuery, settingsQuery } from 'lib/sanity.queries'
