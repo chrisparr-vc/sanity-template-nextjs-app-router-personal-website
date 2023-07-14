@@ -5,7 +5,14 @@ import { FC, PropsWithChildren } from 'react'
 import { ContentBlock } from '../content-block'
 
 export type ColumnProps = {
-  width: string
+  width: {
+    standardWidth: string
+    smallWidth: string
+    mediumWidth: string
+    largeWidth: string
+    xlWidth: string
+    xxlWidth: string
+  }
   content: any
   contentAlignment?: 'left' | 'center' | 'right'
   spaceX?: number
@@ -17,19 +24,31 @@ export const Column: FC<PropsWithChildren<ColumnProps>> = ({
   contentAlignment,
   spaceX,
 }) => {
-  const widthPercentage = (eval(width) ?? 1) * 100
+  // const widthPercentage = (eval(width) ?? 1) * 100
 
-  console.log('spaceX', spaceX)
+  const {
+    standardWidth,
+    smallWidth,
+    mediumWidth,
+    largeWidth,
+    xlWidth,
+    xxlWidth,
+  } = width
 
-  const calculatedWidth = `calc(${widthPercentage}% - ${
-    (spaceX ?? 0) * SPACING_MULTIPLIER
-  }px)`
+  // const calculatedWidth = `calc(${widthPercentage}% - ${
+  //   (spaceX ?? 0) * SPACING_MULTIPLIER
+  // }px)`
+
+  const widthClasses = `${standardWidth ? `w-${standardWidth}` : ''} ${
+    `sm:w-${smallWidth}` ?? ''
+  } ${`md:w-${mediumWidth}` ?? ''} ${`lg:w-${largeWidth}` ?? ''} ${
+    `xl:w-${xlWidth}` ?? ''
+  } ${`2xl:w-${xxlWidth}` ?? ''}`
 
   return (
     <div
-      className={clsx(`column flex flex-col`)}
+      className={clsx(`column flex flex-col`, widthClasses)}
       style={{
-        width: calculatedWidth,
         alignItems:
           contentAlignment === 'left'
             ? 'start'

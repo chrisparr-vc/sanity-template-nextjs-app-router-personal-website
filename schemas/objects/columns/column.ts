@@ -1,5 +1,6 @@
 import { defineType } from 'sanity'
 import { contentAlignmentField } from 'schemas/styles/alignment'
+import widths from 'schemas/styles/widths'
 
 export default defineType({
   title: 'Column',
@@ -7,24 +8,68 @@ export default defineType({
   type: 'object',
   fields: [
     {
-      title: 'Width',
-      name: 'width',
-      type: 'string',
-      initialValue: 'w-full',
+      title: 'Widths at different breakpoints',
+      type: 'object',
+      name: 'widthsAtBreakpoints',
       options: {
-        list: [
-          { title: '1', value: '1' },
-          { title: '1/2', value: '1/2' },
-          { title: '1/3', value: '1/3' },
-          { title: '2/3', value: '2/3' },
-          { title: '1/4', value: '1/4' },
-          { title: '3/4', value: '3/4' },
-          { title: '1/5', value: '1/5' },
-          { title: '2/5', value: '2/5' },
-          { title: '3/5', value: '3/5' },
-          { title: '4/5', value: '4/5' },
-        ],
+        columns: 2,
       },
+      fields: [
+        {
+          title: 'Standard Width',
+          name: 'standardWidth',
+          type: 'string',
+          initialValue: 'w-full',
+          options: {
+            list: widths,
+          },
+        },
+        {
+          title: 'Small Width (384px)',
+          name: 'smallWidth',
+          type: 'string',
+          initialValue: 'w-full',
+          options: {
+            list: widths,
+          },
+        },
+        {
+          title: 'Medium (448px)',
+          name: 'mediumWidth',
+          type: 'string',
+          initialValue: 'w-full',
+          options: {
+            list: widths,
+          },
+        },
+        {
+          title: 'Large (512px)',
+          name: 'largeWidth',
+          type: 'string',
+          initialValue: 'w-full',
+          options: {
+            list: widths,
+          },
+        },
+        {
+          title: 'Extra large (576px)',
+          name: 'xlWidth',
+          type: 'string',
+          initialValue: 'w-full',
+          options: {
+            list: widths,
+          },
+        },
+        {
+          title: '2xl (672px)',
+          name: 'xxlWidth',
+          type: 'string',
+          initialValue: 'w-full',
+          options: {
+            list: widths,
+          },
+        },
+      ],
     },
     {
       title: 'Content',

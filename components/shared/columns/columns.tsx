@@ -24,7 +24,7 @@ export const Columns: FC<PortableTextTypeComponentProps<ColumnsProps>> = ({
 
   const { paddingLeft, paddingRight, spaceX } = spacing ?? {}
 
-  const spaceXClass = spaceX ? `space-x-${spaceX}` : 'space-x-0'
+  const spaceXClass = spaceX ? `gap-x-${spaceX}` : 'gap-x-0'
 
   return (
     <div
